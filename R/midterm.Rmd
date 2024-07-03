@@ -1,0 +1,157 @@
+---
+title: "Summer EC320 Midterm (take-home)"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## README
+
+Complete the following questions below and show all work.
+You must submit a compiled R report with all code and answers in this document.
+Compile the report to html or PDF and submit on Canvas.
+html is preferred.
+Make sure to write your name above where it says “WRITE YOUR NAME HERE”.
+Include it within the quotation marks.
+
+Before writing answering the following questions,
+make sure to compile the report to make sure that everything is working properly.
+As you answer each question,
+compile after each question to make sure you are not making any errors.
+If you are experiencing an error, read the error carefully.
+One tactic is to selectively delete questions/sections
+until the report compiles.
+This will help you narrow down where the coding error is occurring.
+
+Run the following code chunk to set up your R environment with the 
+necessary packages:
+```{r}
+#| message: false
+# Load tidyverse packages
+library(tidyverse)
+
+# Load broom for tidy() regression outputs
+if (!require("broom")) install.packages("broom") 
+library(broom) 
+
+# Load AER package (install if not available)
+if (!require("AER")) install.packages("AER")
+```
+
+## DATA
+
+Run `data("CollegeDistance")` to load in the data object `CollegeDistance` 
+from the `AER` package.
+```{r}
+data("CollegeDistance")
+```
+
+These data originally come from the paper
+[Democratization or Diversion? The Effect of Community Colleges on Educational Attainment](https://www.jstor.org/stable/1392376) by Cecilia Elena Rouse (1995) 
+and were digitized for the textbook by Stock and Watson (2007).
+
+Familiarize yourself with the data set by using `?CollegeDistance` to view the 
+documentation page with variable definitions.
+You should also take a look through the data by using functions like 
+`head()`, `glimpse()`, or `View()`.
+
+## Academic Integrity
+
+You are allowed to consult the lectures, notes, problem sets, quizzes, and the internet on this assignment. 
+However, this is an individual assessment of your own understanding 
+so you are are not permitted to collaborate with anyone else.
+You may consult Stackoverflow, ChatGPT, other LLM models, etc.
+for help with R coding, but you are responsible for understanding any code 
+which you use to answer these questions.
+All written answers must be your in your own words. 
+
+*If you are suspected of plagiarizing, you may recieve a zero for this assignment and possibly for the course.*
+
+### Step 0: Define your research question *(2 pts)*
+
+For this assignment, we will examine one of Rouse's original questions:
+***Does increasing accessibility to colleges increase educational attainment?***
+
+I want you to pick from the variables in the `CollegeDistance` data set 
+one outcome variable ($Y$) and one independent variable ($X$) which you will use throughout this assignment to answer this research question. 
+You can use `?CollegeDistance` or `colnames(CollegeDistance)` to see the 
+options available.
+
+**Fill in the blanks below with the name of your chosen variables:**
+
+- `___` is the variable that I think best represents educational attainment.
+- `___` is the variable that I think best represents accessibility to colleges.
+
+### Step 1: Make observations *(6 pts)*
+
+Before you run any regressions, I want you to look for any visual patterns in the data.
+Replace the `___`'s in the line of code below with the variables you chose in Step 0
+(*remember that spelling and capitalization matter*).
+Then uncomment the line and run it to see a scatterplot of your variables.
+
+```{r, warning=FALSE}
+# qplot(x = ___, y = ___, data = CollegeDistance)
+```
+
+_**Question 1:** What patterns (if any) do you see in the data? Does there seem to be any descriptive evidence of an effect of accessibility on educational attainment? What about any patterns which might speak to the distribution of the error terms in the population relationship?_
+
+REPLACE THIS LINE OF TEXT WITH YOUR ANSWER
+
+### Step 2: Formulate a hypothesis *(2 pts)*
+
+_**Question 2:** Formulate a null hypothesis and an alternative hypothesis to go with your research question. _
+
+Edit the equation between the `$$` lines below to print out your hypotheses:
+
+$$
+H_0: \text{Null hypothesis here} \\
+H_1: \text{Alternative hypothesis here}
+$$
+
+Is this a one-tailed or two-tailed test?
+
+### Step 3: Analyze the data *(8 pts)*
+
+Replace the first `___` with your chosen outcome 
+and replace the second `___` with your chosen independent variable.
+
+```{r}
+# lm(___ ~ ___, data = CollegeDistance) 
+```
+
+Then uncomment and run the line of code to estimate the regression:
+
+$$
+Y_i = \beta_0 + \beta_1 X_i + u_i
+$$
+
+_**Question 3:** Interpret your results: what do the different point estimates in the regression output mean in the context of these variables?_
+
+*Note: be careful about the sign (direction) of the slope estimate!*
+
+REPLACE THIS LINE OF TEXT WITH YOUR ANSWER
+
+### Step 4: Make some inference *(8 pts)*
+
+Copy the last `lm()` call from step 3 and pipe it into a `tidy()` output:
+
+```{r}
+# lm(___ ~ ___, data = CollegeDistance) %>% 
+#   tidy()
+```
+
+_**Question 4:** Use the output to test the hypotheses you wrote in Step 2. Interpret the results using the concepts we learned in class._
+
+REPLACE THIS LINE OF TEXT WITH YOUR ANSWER
+
+### Step 5: Report your conclusions *(18 pts)*
+
+_**Question 5:** Evaluate what your results reveal about the answer to the question of whether accessibility increases educational attainment._
+
+_**Question 6:** What assumptions are necessary to conclude that the correlation within this sample applies to the population relationship? Discuss some potential reasons why these assumptions may not hold._
+
+_**Question 7:** What assumptions are necessary to conclude that the correlation within this sample implies a **causal** relationship? Discuss potential reasons why this might not imply causality._
