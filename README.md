@@ -9,8 +9,8 @@ First, download the repository by downloading the zip file from the green "Code"
 Unzip/extract the zip file.
 It is a good idea to do this in a directory dedicated to this class.
 An example of a file path to save this zip file in would be:
-`~/Documents/classes/EC320S24/problem_sets/`.
-Once unzipped, open the `EC320S24_PS04.Rproj` which will open RStudio.
+`~/Desktop/classes/EC320/midterm/`.
+Once unzipped, open the `EC320Su24_midterm.Rproj` which will open RStudio.
 
 Navigate to the Files tab in the bottom right panel of RStudio. 
 You should see the following files:
