@@ -155,3 +155,15 @@ _**Question 5:** Evaluate what your results reveal about the answer to the quest
 _**Question 6:** What assumptions are necessary to conclude that the correlation within this sample applies to the population relationship? Discuss some potential reasons why these assumptions may not hold._
 
 _**Question 7:** What assumptions are necessary to conclude that the correlation within this sample implies a **causal** relationship? Discuss potential reasons why this might not imply causality._
+
+### Compile and submit your work *(4 pts)*
+
+Make sure that you have written answers to all 7 questions 
+and that all code you used in your answers in contained in code chunks.
+Then compile your Rmd file using the 'Knit' button at the top of the source pane
+or with the hotkey `Shift Cmd/Ctrl K`.
+Open the `midterm.html` file that will appear in the same directory as your 
+`midterm.Rmd` file and check to make sure that the output looks correct.
+
+Once you are sure that your work is correct and formatted correctly,
+upload this file to the assignment named 'Midterm Exam (take-home)' on Canvas.

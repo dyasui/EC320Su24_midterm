@@ -38,15 +38,12 @@ write and compile R markdown documents.
 
 ### Data
 
-The data from this problem set are a sample of district level data from the state of Massachusetts in 1998.
+We will be using the `CollegeDistance` dataset which is composed of 
+cross-sectional data from the High School and Beyond survey with 
+students' initial responses from 1986 and from a follow-up survey in 1986.
+
 It can be loaded into memory through installing the `AER` package from CRAN
 (i.e., `install.packages("AER")`).
 By default, the Rmd will do this for you. 
-After downloading, simply knit the document (cmd/ctrl + shift + k) and make sure 
-everything looks okay.
-
-The Massachusetts data are district-wide averages for public elementary school districts in 1998.
-The data analyzed here are the overall total score, which is the sum of the scores on the English, Math, and Science portions of the test.
-Data on the student-teacher ratio, the percent of students receiving a subsidized lunch and on the percent of students still learning english are averages for each elementary school district for the 1997–1998 school year and were obtained from the Massachusetts department of education.
-Data on average district income are from the 1990 US Census.
-
+After downloading, simply knit the document (cmd/ctrl + shift + k)
+and make sure everything looks okay.
